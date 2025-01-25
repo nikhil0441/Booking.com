@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="SignUp.css">
+    <title>Registration</title>
+</head>
+<body>
+   <div class="wrapper">
+    <span class="icon-close">
+      <ion-icon name="close-outline"></ion-icon>
+    </span>
+    <div class="form-box login">
+        <h2 data-aos="fade-down" data-aos-duration="3000">Registration</h2>
+        <form id="registrationForm">
+            <div class="input-box">
+                <span class="icon" data-aos="fade-down" data-aos-duration="3000">
+                  <ion-icon name="person"></ion-icon>
+                </span>
+                <input type="text" id="username" required data-aos="fade-down" data-aos-duration="3000">
+                <label data-aos="fade-down" data-aos-duration="3000">Username</label>
+            </div>
+
+            <br>
+            <div class="input-box">
+                <span class="icon" data-aos="fade-down" data-aos-duration="3000">
+                  <ion-icon name="mail-unread"></ion-icon>
+                </span>
+                <input type="email" id="email" required data-aos="fade-down" data-aos-duration="3000">
+                <label data-aos="fade-down" data-aos-duration="3000">Email</label>
+            </div>
+            <br>
+            <div class="input-box">
+                <span class="icon">
+                  <ion-icon name="lock-closed" data-aos="fade-down" data-aos-duration="3000"></ion-icon>
+                </span>
+                <input type="password" id="password" required data-aos="fade-down" data-aos-duration="3000">
+                <label data-aos="fade-down" data-aos-duration="3000">Password</label>
+            </div>
+            <button type="submit" class="btn" data-aos="fade-down" data-aos-duration="3000">Register</button>
+            <div class="login-register" data-aos="fade-down" data-aos-duration="3000">
+                <p>I agree to the terms & conditions? <a href="/login.html" class="register-link">Login</a></p>
+            </div>
+        </form>
+    </div>
+   </div>
+
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+      AOS.init();
+
+      // JavaScript to store form data in local storage
+      const form = document.getElementById('registrationForm');
+
+      form.addEventListener('submit', (e) => {
+          e.preventDefault(); // Prevent form submission
+
+          // Get input values
+          const username = document.getElementById('username').value;
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+
+          // Create a user object
+          const userData = { username, email, password };
+
+          // Store user data in local storage
+          localStorage.setItem('userData', JSON.stringify(userData));
+
+          // Optional: Show a success message
+          alert('Registration successful! Your data has been saved in local storage.');
+
+          // Clear the form
+          form.reset();
+      });
+   </script>
+</body>
+</html>

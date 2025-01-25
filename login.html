@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="Login.css">
+    <title>Login Page</title>
+</head>
+<body>
+   <div class="wrapper">
+    <span class="icon-close">
+      <ion-icon name="close-outline"></ion-icon>
+    </span>
+    <div class="form-box login">
+        <h2 data-aos="fade-down" data-aos-duration="3000">Login</h2>
+        <form id="loginForm">
+            <div class="input-box">
+                <span class="icon" data-aos="fade-down" data-aos-duration="3000">
+                  <ion-icon name="mail-unread"></ion-icon>
+                </span>
+                <input type="email" id="loginEmail" required data-aos="fade-down" data-aos-duration="3000">
+                <label data-aos="fade-down" data-aos-duration="3000">Email</label>
+            </div>
+            <br>
+            <div class="input-box">
+                <span class="icon">
+                  <ion-icon name="lock-closed" data-aos="fade-down" data-aos-duration="3000"></ion-icon>
+                </span>
+                <input type="password" id="loginPassword" required data-aos="fade-down" data-aos-duration="3000">
+                <label data-aos="fade-down" data-aos-duration="3000">Password</label>
+            </div>
+            <div class="remember-forgot" data-aos="fade-down" data-aos-duration="3000">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn" data-aos="fade-down" data-aos-duration="3000">Login</button>
+            <div class="login-register" data-aos="fade-down" data-aos-duration="3000">
+                <p>Don't have an account? <a href="/SignUp.html" class="register-link">Register</a></p>
+            </div>
+        </form>
+    </div>
+   </div>
+
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+      AOS.init();
+
+      // JavaScript to handle login functionality
+      const loginForm = document.getElementById('loginForm');
+
+      loginForm.addEventListener('submit', function (e) {
+          e.preventDefault(); // Prevent form submission
+
+          // Get input values
+          const email = document.getElementById('loginEmail').value;
+          const password = document.getElementById('loginPassword').value;
+
+          // Retrieve user data from local storage
+          const savedUserData = localStorage.getItem('userData');
+
+          if (savedUserData) {
+              const userData = JSON.parse(savedUserData);
+
+              // Check if email and password match
+              if (userData.email === email && userData.password === password) {
+                  alert('Login successful! Welcome ' + userData.username + '.');
+                  // Redirect to another page or perform further actions
+                  window.location.href = '/welcome.html'; // Example redirection
+              } else {
+                  alert('Invalid email or password. Please try again.');
+              }
+          } else {
+              alert('No user found. Please register first.');
+          }
+      });
+   </script>
+</body>
+</html>
