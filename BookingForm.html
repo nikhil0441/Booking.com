@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/BookingForm.css">
+  <title>Hotel Booking Form</title>
+  <script src="/BookingForm.js">
+    
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <div class="header">
+      <h1>Hotel Booking</h1>
+      <p>Experience something new every moment</p>
+    </div>
+    <form onsubmit="validateForm(event)" class="booking-form" action="/index.html">
+      <div class="row">
+        <div class="input-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+        </div>
+        <div class="input-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="ex: myname@example.com" required>
+        </div>
+        <div class="input-group">
+          <label for="guests">Number of Guests</label>
+          <input type="number" id="guests" name="guests" placeholder="e.g., 2" required>
+        </div>
+      </div>
+
+      <!-- Phone Number Field -->
+      <div class="row">
+        <div class="input-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g., 1234567890" required>
+        </div>
+      </div>
+
+      <!-- Room Type and Price -->
+      <div class="row">
+        <div class="input-group">
+          <label for="room-type">Room Type</label>
+          <select id="room-type" name="room-type" required>
+            <option value="" disabled selected>Please Select</option>
+            <option value="single">Single - $100</option>
+            <option value="double">Double - $150</option>
+            <option value="suite">Suite - $250</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group">
+          <label for="arrival">Arrival Date & Time</label>
+          <input type="datetime-local" id="arrival" name="arrival" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-group">
+          <label for="departure">Departure Date</label>
+          <input type="date" id="departure" name="departure" required>
+        </div>
+        <div class="input-group">
+          <label for="pickup">Free Pickup?</label>
+          <div>
+            <label><input type="radio" name="pickup" value="yes" required> Yes, please!</label>
+            <label><input type="radio" name="pickup" value="no" required> No, thanks!</label>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="input-group">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" name="requests" rows="3" placeholder="Enter any special requests"></textarea>
+      </div>-->
+      <button type="submit" class="submit-btn" onclick="insertt()">Submit</button> 
+    </form>
+  </div>
+  <script src="/ShowInformation.js"></script>
+</body>
+</html>

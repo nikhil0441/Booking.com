@@ -269,7 +269,11 @@ h3 {
     width: 100%;
     transition: background-color 0.3s, transform 0.3s;
 }
-
+.deal-btn a{
+    text-decoration: none;
+  color: white;
+  font-weight:900;
+}
 .deal-btn:hover {
     background-color: #0056b3;
     transform: scale(1.05);
