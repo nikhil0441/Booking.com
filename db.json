@@ -25,7 +25,8 @@
       "Phone_Number": 77661548456,
       "email": "nikhilpatel03022004@gamil.com",
       "Member": 2,
-      "id": "240b"
+      "id": "240b",
+      "Room_type":"Single"
     },
     {
       "id": "f108",
@@ -35,6 +36,8 @@
       "Phone_Number": "9039373762",
       "email": "vandanpatel15031986@gmail.com",
       "Member": "4"
+
+
     },
     {
       "id": "7ae4",
