@@ -447,3 +447,107 @@ footer {
         width: 80%;
     }
 }
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    /* Reduce padding for smaller screens */
+    #head {
+        padding: 0 10px;
+    }
+
+    #navbar ul {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Hamburger Menu */
+    #navbar {
+        display: none; /* Hide navbar by default on mobile */
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #navbar ul li {
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #hamburger-icon {
+        display: block; /* Show the menu icon */
+    }
+#SearchHotel{
+    display: none;
+}
+#navbar{
+    display: none;
+}
+#company{
+display: none;
+}
+    /* Grid Layout Adjustments */
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 10px;
+    }
+
+    #tranding_city_hotels {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further reduce padding and font sizes */
+    #head {
+        height: 80px;
+    }
+#SearchHotel{
+    display: none;
+}
+#navbar{
+    display: none;
+}
+#company{
+display: none;
+}
+    #icon {
+        font-size: 24px;
+    }
+
+    #navbar ul li a {
+        font-size: 16px;
+    }
+
+    .card-container {
+        padding: 5px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    #tranding_city_hotels img {
+        height: 200px;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+}

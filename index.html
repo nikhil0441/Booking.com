@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="index.css">
     <title>Hotel Booking</title>
 </head>
 <body>
     <header>
         <div id="head">
-            <div id="icon">Discover Luxury Stays</div>
+            <div id="icon"  >Discover Luxury Stays</div>
             <div id="hamburger-icon" onclick="toggleMenu()">☰</div>
             <nav id="navbar">
                 <ul>
-                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/index.html"  >Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="/Offers.html">Offers</a></li>
                     <li><a href="/ShowInformation.html">Booking Info</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <div id="loginButton">
+            <div id="loginButton" >
                 <button>
                     <a href="/login.html" style="text-decoration: none; color: white;">Login</a>
                 </button>
@@ -225,8 +226,12 @@
     <p>Made with ❤️ by Your Company</p>
   </div>
 </footer>
+<script>
+    AOS.init();
+</script>
 
 <script src="/hotel.js"></script>
+<script src="/index.js"></script>
     
 </body>
 </html>

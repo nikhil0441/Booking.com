@@ -26,3 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".offers-slider");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let cardWidth = document.querySelector(".offer-card").offsetWidth + 20; // Card width + gap
+
+  prevBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: -cardWidth, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: cardWidth, behavior: "smooth" });
+  });
+});

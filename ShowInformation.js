@@ -129,7 +129,7 @@ let updatee = async (id) => {
   let data = await res.json();
 
   let formdata = `
-    <form id="js" class="update_booking-form" action="/index.html">
+    <form id="jss">
       <div class="row">
         <div class="input-group">
           <label for="first-name">First Name</label>
@@ -186,11 +186,11 @@ let updatee = async (id) => {
           </div>
         </div>
       </div>
-      <button type="submit" class="submit-btn" onclick="finalupdate(${id})">Submit</button>
+      <button type="submit" class="submit-btn" onclick="finalupdate(${data.id})">Submit</button>
     </form>
   `;
 
-  document.querySelector("#jss").innerHTML = formdata;
+  document.querySelector("#updateForm").innerHTML = formdata;
 };
 
 // Close the update form
@@ -227,7 +227,7 @@ let finalupdate = (id) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          Name: inp_first_name + " " + inp_last_name, // Corrected field name and space
+          Name: inp_first_name , // Corrected field name and space
           Phone_Number: inpphone,
           Cheaking_In: inpcheakin,
           Cheak_Out: inpcheakout,
