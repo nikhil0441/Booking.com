@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7c7d7f;
+}
+
+/* Offers Section */
+.offers-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.offers-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Offers Container */
+.offers-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Slider */
+.offers-slider {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    width: 900px; /* Only show 3 cards at a time */
+    scroll-behavior: smooth;
+}
+
+/* Offer Card */
+.offer-card {
+    min-width: 280px;
+    max-width: 280px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.offer-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.offer-details {
+    padding: 15px;
+}
+
+.offer-details h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.offer-details p {
+    color: #555;
+    margin: 10px 0;
+}
+
+.book-now {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.book-now:hover {
+    background-color: #e64a19;
+}
+
+/* Navigation Buttons */
+#prevBtn, #nextBtn {
+    background: #ff5722;
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+#prevBtn { left: -20px; }
+#nextBtn { right: -20px; }
+
+#prevBtn:hover, #nextBtn:hover {
+    background: #e64a19;
+}
