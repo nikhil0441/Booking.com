@@ -6,6 +6,83 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="showForm"></div>
+       <div id="updateForm">
+ <div class="update_booking-form">
+        <h1>Update Booking Information</h1>
+        <form id="jss">
+            <div class="row">
+                <div class="input-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="upfirst-name" name="first-name" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="uplast-name" name="last-name" placeholder="Last Name" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="upemail" name="email" placeholder="example@domain.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="upguests" name="guests" placeholder="e.g., 2" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="upphone" name="phone" placeholder="e.g., 1234567890" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="room-type">Room Type</label>
+                    <select id="uproom-type" name="room-type" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="single">Single - $100</option>
+                        <option value="double">Double - $150</option>
+                        <option value="suite">Suite - $250</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="arrival">Arrival Date & Time</label>
+                    <input type="datetime-local" id="uparrival" name="arrival" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="departure">Departure Date</label>
+                    <input type="date" id="updeparture" name="departure" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="pickup">Free Pickup?</label>
+                    <div>
+                        <label><input type="radio" name="pickup" value="yes" required> Yes, please!</label>
+                        <label><input type="radio" name="pickup" value="no" required> No, thanks!</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="submit-btn" onclick="finalupdate()">Submit</button>
+                <button type="button" class="cancel-btn" onclick="closeform()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <script src="/ShowInformation.js"></script>
 </body>
 </html>
