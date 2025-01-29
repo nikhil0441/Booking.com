@@ -22,7 +22,7 @@ let fetchData = async () => {
         <td>${e.Member}</td>
         <td>${e.Room_type}</td>
         <td onclick="dell(${e.id})">Del</td>
-        <td onclick="updatee(${e.id})">Update</td>
+        <td onclick="updatee('${e.id}')">Update</td>
         </tr>
         `;
     });
@@ -186,7 +186,7 @@ let updatee = async (id) => {
           </div>
         </div>
       </div>
-      <button type="submit" class="submit-btn" onclick="finalupdate(${data.id})">Submit</button>
+      <button type="submit" class="submit-btn" onclick="finalupdate('${data.id}')">Submit</button>
     </form>
   `;
 
@@ -211,14 +211,7 @@ let finalupdate = (id) => {
   let inpcheakout = document.querySelector("#updeparture").value;
 
   // Show confirmation popup before updating data
-  Swal.fire({
-    title: "Do you want to save the changes?",
-    showDenyButton: true,
-    showCancelButton: true,
-    confirmButtonText: "Save",
-    denyButtonText: "Don't save"
-  }).then((result) => {
-    if (result.isConfirmed) {
+
       let url = `http://localhost:3000/Booking/${id}`;
 
       fetch(url, {
@@ -236,25 +229,7 @@ let finalupdate = (id) => {
           Room_type: inproomType,
         })
       })
-        .then((response) => {
-          if (response.ok) {
-            Swal.fire("Saved!", "Your changes have been saved.", "success");
-            location.href="Updateform.html"; // Reload the page after update
-          } else {
-            Swal.fire("Error!", "There was an issue saving the data.", "error");
-          }
-        })
-        .catch((error) => {
-          Swal.fire(
-            "Network Error!",
-            "Failed to update the data. Please try again.",
-            "error"
-          );
-        });
-    } else if (result.isDenied) {
-      Swal.fire("Changes are not saved", "", "info");
-    }
-  });
+        
 
   return false;
 };
@@ -273,36 +248,29 @@ let Pagination=(data)=>{
     callback: function(data, pagination) {
         // template method of yourself
         DataShow(data);
-        var html = template(data);
-        dataContainer.html(html);
+        
+      
     }
 });
 };
 
 
 // Search functionality
-let searchData = () => {
-  let searchQuery = document.querySelector("#searchInput").value.toLowerCase();
+let filterout = () => {
+  let searchQuery = document.querySelector("#search").value.toLowerCase();
+  let tableRows = document.querySelectorAll("#showData tr");
 
-  // rows of the table
-  let tableRows = document.querySelectorAll("#show tr");
-
-  // Loop through each row and filter based on name, id, or mobile
-  tableRows.forEach(row => {
+  tableRows.forEach((row) => {
     let name = row.cells[0].textContent.toLowerCase();
-    let id = row.getAttribute('data-id').toLowerCase();
-    let mobile = row.cells[2].textContent.toLowerCase();
-
-    if (name.includes(searchQuery) || id.includes(searchQuery) || mobile.includes(searchQuery)) {
-      row.style.display = ''; // Show the row
+    if (name.includes(searchQuery)) {
+      row.style.display = "";
     } else {
-      row.style.display = 'none'; // Hide the row
+      row.style.display = "none";
     }
   });
 };
 
-// Load data and pagination on page load
-
 window.onload = () => {
-  fetchData(); // Fetch data and initialize pagination
+  fetchData();
 };
+// Load data and pagination on page load
