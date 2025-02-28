@@ -274,3 +274,7 @@ window.onload = () => {
   fetchData();
 };
 // Load data and pagination on page load
+
+function should(){
+
+};
