@@ -76,3 +76,6 @@ function validateForm(event) {
   alert("Form submitted successfully!");
   // window.location.replace("confirmationPage.html"); // Adjust this URL as needed
 }
+function add(){
+
+};
