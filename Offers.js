@@ -41,3 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.scrollBy({ left: cardWidth, behavior: "smooth" });
   });
 });
+function add(){
+  
+}
